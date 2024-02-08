@@ -12,3 +12,11 @@ test.
 >>> text_indentation(3.14)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+>>> text_indentation(True)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(False)
+Traceback (most recent call last):
+TypeError: text must be a string
