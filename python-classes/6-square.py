@@ -42,17 +42,13 @@ class Square:
             Setter function that set and checks type and value
             of given position
         """
-        if not isinstance(value, tuple):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif not all(
-            isinstance(element, int) and element > 0
-            for element in value
-        ):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        if not isinstance(value, tuple) or\
+                len(value) != 2 or\
+                not isinstance(value[0], int) or\
+                not isinstance(value[1], int) or\
+                value[0] < 0 or value[1] < 0:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        self.__position = value
 
     def area(self):
         """ Function that returns square's area """
