@@ -68,4 +68,3 @@ class Rectangle:
             if i != self.__height - 1:
                 string_to_print += '\n'
         return string_to_print
-
