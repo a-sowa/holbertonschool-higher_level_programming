@@ -84,3 +84,10 @@ a must be an integer
 ... except Exception as e:
 ...     print(e)
 b must be an integer
+
+# Test case 15: Testing TypeError for invalid input (a is a boolean)
+>>> try:
+...     add_integer(True, 10)
+... except Exception as e:
+...     print(e)
+11
