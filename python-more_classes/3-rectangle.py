@@ -62,9 +62,12 @@ class Rectangle:
             with character '#' based on its height and width
         """
         string_to_print = ""
-        for i in range(self.__height):
-            for j in range(self.__width):
-                string_to_print += '#'
-            if i != self.__height - 1:
-                string_to_print += '\n'
-        return string_to_print
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    string_to_print += '#'
+                if i != self.__height - 1:
+                    string_to_print += '\n'
+            return string_to_print
