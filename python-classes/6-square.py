@@ -60,13 +60,12 @@ class Square:
             based on its size and position
         """
         if self.__size == 0:
-            print()
+            print("")
         else:
-            for idx_1 in range(self.__position[1]):
-                print()
-            for idx_2 in range(self.__size):
-                for idx_3 in range(self.position[0]):
-                    print("_", end='')
-                for idx_4 in range(self.__size):
-                    print("#", end='')
-                print()
+            for whiteline in range(0, self.position[1]):
+                print("")
+            for index in range(0, self.__size):
+                print(" " * self.__position[0], end="")
+                for index2 in range(0, self.__size):
+                    print("#", end="")
+                print("")
