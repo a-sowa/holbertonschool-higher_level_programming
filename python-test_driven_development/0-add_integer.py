@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 """
     Module that adds two integers
+    test for checker
+    test for checker
 """
 
 
 def add_integer(a, b=98):
-    """ Adds 2 integers and returns an integer: the addition of a and b """
+    """
+        Adds 2 integers and returns an integer: the addition of a and b
+    """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
 
