@@ -1,0 +1,35 @@
+# Test matrix_divided function
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+# Test Case 1: Divide each element of the matrix by 1 (no change)
+>>> print(matrix_divided(matrix, 1))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+# Test Case 2: Divide each element of the matrix by 3
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Test Case 3: Attempt to divide by 0, should raise a ZeroDivisionError
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+# Test Case 4: Attempt to divide a matrix with different row sizes, should raise a TypeError
+>>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+# Test Case 5: Attempt to divide by a string, should raise a TypeError
+>>> print(matrix_divided(matrix, 'hello'))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Test Case 6: Divide each element of the matrix by 9.99
+>>> print(matrix_divided(matrix, 9.99))
+[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]
