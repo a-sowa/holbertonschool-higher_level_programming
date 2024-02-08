@@ -33,3 +33,31 @@ TypeError: div must be a number
 # Test Case 6: Divide each element of the matrix by 9.99
 >>> print(matrix_divided(matrix, 9.99))
 [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]
+
+# Test Case 6: Empty matrix, should raise a TypeError
+>>> matrix_divided([], 2)
+[]
+
+# Test Case 7: Matrix with non-numeric values, should raise a TypeError
+>>> matrix_divided([[1, 2, 'a'], [4, 5, 6]], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test Case 8: Matrix with rows of different sizes, should raise a TypeError
+>>> matrix_divided([[1, 2, 3], [4, 5]], 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+# Test Case 9: Non-numeric divisor, should raise a TypeError
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 'divisor')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Test Case 10: Divide by zero, should raise a ZeroDivisionError
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
