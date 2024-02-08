@@ -15,7 +15,7 @@
 >>> add_integer(-2, -2)
 -4
 
->>> add_integer(4, "school")
+>>> add_integer(4, "School")
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
@@ -29,3 +29,13 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+add_integer(random_variable, -2)
+Traceback (most recent call last):
+...
+NameError: name 'random_variable is not defined
+
+>>> add_integer(float("inf"), 10)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
