@@ -3,6 +3,7 @@
     Module that adds two integers
 """
 
+
 def add_integer(a, b=98):
     """ Adds 2 integers and returns an integer: the addition of a and b """
     if not isinstance(a, (int, float)):
@@ -15,6 +16,7 @@ def add_integer(a, b=98):
     b = int(b)
 
     return a + b
+
 
 if __name__ == '__main__':
     import doctest
