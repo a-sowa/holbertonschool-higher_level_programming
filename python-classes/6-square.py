@@ -14,8 +14,8 @@ class Square:
             Function that creates an instance of Square
             with defined size and position
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
