@@ -8,8 +8,8 @@ class Rectangle:
     """ Class that defines a rectangle, its width and height """
     def __init__(self, width=0, height=0):
         """ Function that creates an instance of Rectangle """
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     @property
     def height(self):
