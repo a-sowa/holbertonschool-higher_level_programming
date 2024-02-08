@@ -1,0 +1,43 @@
+# Test say_my_name function
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test with both first and last names
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test with both first and last names
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+# Test with only the first name
+>>> say_my_name("Bob")
+My name is Bob 
+
+# Test with an empty string as the first name
+>>> say_my_name("")
+My name is  
+
+# Test with a non-string first name
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+# Test with a non-string last name
+>>> say_my_name('Walter', 12)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+# Test with non-string first and last names
+>>> say_my_name(12, 12)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+# Test with None as the first name
+>>> say_my_name(None)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
