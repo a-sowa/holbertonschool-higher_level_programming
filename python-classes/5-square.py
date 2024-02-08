@@ -5,6 +5,7 @@
 
 
 class Square:
+    """ Class that defines a square, its size and area then prints it """
     def __init__(self, size=0):
         """ Function that creates an instance of Square with defined size """
         self.__size = size
@@ -38,4 +39,4 @@ class Square:
             for i in range(self.__size):
                 for j in range(self.__size):
                     print("#", end='')
-                print()
+                print('')

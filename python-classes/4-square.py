@@ -5,10 +5,10 @@
 
 
 class Square:
-    """ Class description test"""
+    """ Class that defines a square, its size and area """
     def __init__(self, size=0):
         """ Function that creates an instance of Square with defined size """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
