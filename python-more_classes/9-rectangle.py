@@ -17,7 +17,7 @@ class Rectangle:
         """ Function that creates an instance of Rectangle """
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def height(self):
@@ -87,7 +87,7 @@ class Rectangle:
             decrements instances counter
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -106,4 +106,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Return a new Rectangle with width and height equal to size."""
-        return (cls(size, size))
+        return cls(size, size)
