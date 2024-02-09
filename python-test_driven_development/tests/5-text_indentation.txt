@@ -2,21 +2,62 @@
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+# Test case: Basic input with no punctuation
 >>> text_indentation("test")
 test
 
+# Test case: Input with a period
 >>> text_indentation("test.")
 test.
 <BLANKLINE>
 
+# Test case: TypeError with float input
 >>> text_indentation(3.14)
 Traceback (most recent call last):
 TypeError: text must be a string
 
+# Test case: TypeError with boolean input (True)
 >>> text_indentation(True)
 Traceback (most recent call last):
 TypeError: text must be a string
 
+# Test case: TypeError with boolean input (False)
 >>> text_indentation(False)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+# Test case: Multiple occurrences of punctuation in a row
+>>> text_indentation("This is... a test.")
+This is.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+ a test.
+<BLANKLINE>
+
+# Test case: Punctuation at the beginning and end of the text
+>>> text_indentation(".Test case with punctuation.")
+.
+<BLANKLINE>
+Test case with punctuation.
+<BLANKLINE>
+
+# Test case: Punctuation and spaces
+>>> text_indentation("Sentence one. Sentence two ? Sentence three : Sentence four.")
+Sentence one.
+<BLANKLINE>
+ Sentence two ?
+<BLANKLINE>
+ Sentence three :
+<BLANKLINE>
+ Sentence four.
+<BLANKLINE>
+
+# Test case: Empty string
+>>> text_indentation("")
+
+# Test case: Single character
+>>> text_indentation("A")
+A
