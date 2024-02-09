@@ -9,19 +9,21 @@ def text_indentation(text):
     """ Checks if text is a string and add a 2 lines aftes '.' '?' and ':' """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-
-    new_text = ""
-
     if text == "":
-        new_text = "\n\n"
+        print("\n\n", end="")
+
+    char_list = [".", "?", ":"]
+    new_line_added = False
 
     for char in text:
-        if char in ['.', '?', ':']:
-            new_text += char + "\n\n"
+        if new_line_added and char == " ":
+            continue
+        print(char, end="")
+        if char in char_list:
+            print("\n\n", end="")
+            new_line_added = True
         else:
-            new_text += char
-
-    print(new_text, end='')
+            new_line_added = False
 
 
 if __name__ == '__main__':

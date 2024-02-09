@@ -34,7 +34,7 @@ This is.
 <BLANKLINE>
 .
 <BLANKLINE>
- a test.
+a test.
 <BLANKLINE>
 
 # Test case: Punctuation at the beginning and end of the text
@@ -48,11 +48,11 @@ Test case with punctuation.
 >>> text_indentation("Sentence one. Sentence two ? Sentence three : Sentence four.")
 Sentence one.
 <BLANKLINE>
- Sentence two ?
+Sentence two ?
 <BLANKLINE>
- Sentence three :
+Sentence three :
 <BLANKLINE>
- Sentence four.
+Sentence four.
 <BLANKLINE>
 
 # Test case: Empty string
