@@ -57,6 +57,8 @@ Sentence one.
 
 # Test case: Empty string
 >>> text_indentation("")
+<BLANKLINE>
+<BLANKLINE>
 
 # Test case: Single character
 >>> text_indentation("A")
