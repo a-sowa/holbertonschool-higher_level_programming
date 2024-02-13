@@ -1,0 +1,62 @@
+# Test File: test_basegeometry_invalid.txt
+
+# Description: Testing the BaseGeometry class with invalid input.
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Test Case 1: Invalid area() call
+>>> geometry = BaseGeometry()
+>>> geometry.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+# Test Case 2: Invalid integer_validator call with non-integer value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("width", "string")
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+# Test Case 3: Invalid integer_validator call with non-positive value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("height", 0)
+Traceback (most recent call last):
+...
+ValueError: height must be greater than 0
+
+# Test Case 5: Invalid integer_validator call with negative value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("length", -8)
+Traceback (most recent call last):
+...
+ValueError: length must be greater than 0
+
+# Test Case 1: Valid integer_validator call
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("width", 10)
+
+
+# Test Case 2: Valid integer_validator call with a large positive value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("height", 999999)
+
+
+# Test Case 3: Valid integer_validator call with a very large positive value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("length", 1000000000)
+
+
+# Test Case 4: Valid integer_validator call with a negative value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("depth", -5)
+Traceback (most recent call last):
+...
+ValueError: depth must be greater than 0
+
+# Test Case 5: Valid integer_validator call with a zero value
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("radius", 0)
+Traceback (most recent call last):
+...
+ValueError: radius must be greater than 0
