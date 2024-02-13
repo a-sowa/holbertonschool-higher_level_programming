@@ -23,7 +23,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """
-            Prints rectangle's dimensions;
+            Returns a string representation of the rectangle.
             format : [Rectangle] <width>/<height>
         """
-        return '[Rectangle] ' + str(self.__width) + "/" + str(self.__height)
+        return f"[Rectangle] {self.__width}/{self.__height}"
