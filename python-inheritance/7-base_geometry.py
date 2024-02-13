@@ -6,10 +6,7 @@
 
 class BaseGeometry:
     """Class named BaseGeometry """
-    def __init__(self):
-        """ empty init function """
-        pass
-    
+
     def area(self):
         """ Raises an Exception with the message area() is not implemented """
         raise Exception("area() is not implemented")
