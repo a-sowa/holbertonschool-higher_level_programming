@@ -32,7 +32,8 @@ class Student:
                                     If None, retrieve all attributes.
 
         Returns:
-            dict: A dictionary representing the selected attributes of the student.
+            dict: A dictionary representing the selected
+            attributes of the student.
         """
         if attrs is None:
             return self.__dict__
