@@ -46,7 +46,8 @@ class Student:
         Replaces all attributes of the Student instance based on a dictionary.
 
         Args:
-            json (dict): A dictionary representing the attributes to be replaced.
+            json (dict): A dictionary representing the attributes to
+            be replaced.
         """
         for key, value in json.items():
             setattr(self, key, value)
