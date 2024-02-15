@@ -1,78 +1,114 @@
-# Test print_sorted function
+===============================
+1. Print sorted module
+===============================
 
-# Description: Testing the MyList class and print_sorted method.
+Import module:
+==============
+    >>> MyList = __import__('1-my_list').MyList
 
->>> MyList = __import__('1-my_list').MyList
 
-# Test Case 1: Basic Usage
->>> my_list = MyList([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
->>> my_list.print_sorted()
-[1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+Function:
+=========
+Write a class MyList that inherits from list:
 
-# Test Case 2: Empty List
->>> my_empty_list = MyList([])
->>> my_empty_list.print_sorted()
-[]
+    * You can assume that all the elements of the list will be of type int
 
-# Test Case 3: Duplicate Elements
->>> my_duplicate_list = MyList([7, 2, 4, 2, 7, 1, 4])
->>> my_duplicate_list.print_sorted()
-[1, 2, 2, 4, 4, 7, 7]
+Section // No exceptions
+=========================
 
-# Test Case 4: Already Sorted List
->>> already_sorted_list = MyList([1, 2, 3, 4, 5])
->>> already_sorted_list.print_sorted()
-[1, 2, 3, 4, 5]
+Test case #0: A test case to order a disordered list of positive integers
 
-# Test Case 5: Reverse Sorted List
->>> reverse_sorted_list = MyList([5, 4, 3, 2, 1])
->>> reverse_sorted_list.print_sorted()
-[1, 2, 3, 4, 5]
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
 
-# Test Case 6: List with Negative Numbers
->>> negative_numbers_list = MyList([-3, -1, -4, -1, -5, -9, -2, -6, -5, -3, -5])
->>> negative_numbers_list.print_sorted()
-[-9, -6, -5, -5, -5, -4, -3, -3, -2, -1, -1]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
 
-# Test Case 7: List with Zero
->>> zero_in_list = MyList([3, 1, 0, 4, 5])
->>> zero_in_list.print_sorted()
-[0, 1, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
 
-# Test Case 8: Non-integer Element in List
->>> invalid_list = MyList([3, 1, 'invalid', 4, 5])
->>> invalid_list.print_sorted()
-Traceback (most recent call last):
-...
-TypeError: '<' not supported between instances of 'str' and 'int'
+Test case #1: A test case to order a disordered list of positive integers
 
-# Test Case 9: List with None
->>> none_in_list = MyList([3, 1, None, 4, 5])
->>> none_in_list.print_sorted()
-Traceback (most recent call last):
-...
-TypeError: '<' not supported between instances of 'NoneType' and 'int'
+    >>> my_list = MyList()
+    >>> my_list.append(5)
+    >>> my_list.append(4)
+    >>> my_list.append(3)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [5, 4, 3, 2, 1]
 
-# Test Case 10: List with Float
->>> float_in_list = MyList([3, 1, 2.5, 4, 5])
->>> float_in_list.print_sorted()
-[1, 2.5, 3, 4, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
 
-# Test Case 11: List with Boolean
->>> bool_in_list = MyList([True, 1, False, 4, 5])
->>> bool_in_list.print_sorted()
-[False, True, 1, 4, 5]
+    >>> print(my_list)
+    [5, 4, 3, 2, 1]
 
-# Test Case 12: List with String
->>> string_in_list = MyList([3, 1, 'hello', 4, 5])
->>> string_in_list.print_sorted()
-Traceback (most recent call last):
-...
-TypeError: '<' not supported between instances of 'str' and 'int'
+Test case #2: A test case for a empty list
 
-# Test Case 13: List with Tuple
->>> tuple_in_list = MyList([3, 1, (1, 2), 4, 5])
->>> tuple_in_list.print_sorted()
-Traceback (most recent call last):
-...
-TypeError: '<' not supported between instances of 'tuple' and 'int'
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+
+    >>> my_list.print_sorted()
+    []
+
+    >>> print(my_list)
+    []
+
+Test case #3: A test case for do nothing
+
+    >>> my_list = MyList()
+    >>> my_list.append(-5)
+    >>> my_list.append(-4)
+    >>> my_list.append(-3)
+    >>> my_list.append(-2)
+    >>> my_list.append(-1)
+    >>> print(my_list)
+    [-5, -4, -3, -2, -1]
+
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1]
+
+    >>> print(my_list)
+    [-5, -4, -3, -2, -1]
+
+Test case #4: A test case to order a disordered list of negative integers
+
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(-4)
+    >>> my_list.append(-2)
+    >>> my_list.append(-3)
+    >>> my_list.append(-5)
+    >>> print(my_list)
+    [-1, -4, -2, -3, -5]
+
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1]
+
+    >>> print(my_list)
+    [-1, -4, -2, -3, -5]
+
+
+Section // Attribute Errors
+============================
+
+Test case #5: A invalid test case of tuples
+
+    >>> my_list = (1, 2)
+    >>> print(my_list)
+    (1, 2)
+    
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    AttributeError: 'tuple' object has no attribute 'print_sorted'
+
+    >>> print(my_list)
+    (1, 2)
