@@ -4,6 +4,8 @@
     as the foundation for other classes in the project.
 """
 
+import json
+
 
 class Base:
     """ Base class for managing unique identifiers. """
@@ -25,3 +27,19 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+            Convert a list of dictionaries to its JSON string representation.
+
+            Parameters:
+            - list_dictionaries: List of dictionaries.
+
+            Returns:
+            - JSON string representation of the list of dictionaries.
+        """
+
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
