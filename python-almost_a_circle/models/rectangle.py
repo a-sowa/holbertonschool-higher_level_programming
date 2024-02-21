@@ -100,3 +100,12 @@ class Rectangle(Base):
         """Print the Rectangle instance with the character '#'."""
         for i in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """
+            Override the __str__ method to represent
+            the Rectangle instance as a string.
+        """
+        str_1 = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+        str_2 = f" - {self.__width}/{self.__height}"
+        return f"{str_1}{str_2}"
