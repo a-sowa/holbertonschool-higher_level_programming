@@ -136,6 +136,7 @@ class testSquareCreation(unittest.TestCase):
         expected = {'id': 5, 'x': 5, 'size': 5, 'y': 5}
         self.assertEqual(s1_dictionary, expected)
 
+
 class TestSquareIdIdentation(unittest.TestCase):
     """Tests for check the id attribution of all instance"""
     def testWithoutIDArg(self):
@@ -215,6 +216,7 @@ class TestupdateSquare(unittest.TestCase):
         r1.update(x=1, height=2, y=3, width=4)
         self.assertEqual([r1.id, r1.width, r1.height, r1.x, r1.y],
                          [89, 4, 2, 1, 3])
+
 
 class TestSquare_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Square class."""
@@ -841,6 +843,7 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaises(TypeError):
             s.to_dictionary(1)
+
 
 if __name__ == "__main__":
     unittest.main()

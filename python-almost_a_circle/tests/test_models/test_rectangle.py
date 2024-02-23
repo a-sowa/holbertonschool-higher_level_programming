@@ -58,6 +58,7 @@ class testRectangleCreation(unittest.TestCase):
         Base class
         """
         self.assertTrue(issubclass(Rectangle, Base))
+
     def test_parameters(self):
         """
         Test parameters for Rectangle class
@@ -81,6 +82,7 @@ class testRectangleCreation(unittest.TestCase):
         self.assertEqual(r3.y, 0)
         with self.assertRaises(TypeError):
             r4 = Rectangle()
+
     def test_string(self):
         """
         Test string parameters for a
@@ -88,6 +90,7 @@ class testRectangleCreation(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             Rectangle('Monty', 'Python')
+
     def test_type_param(self):
         """
         Test different types of parameters
@@ -138,6 +141,7 @@ class testRectangleCreation(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(5, 9, 5, -4798576398576)
             raise ValueError()
+
 
 class TestRectangleIdIdentation(unittest.TestCase):
     """Tests for check the id attribution of all instance"""
@@ -218,6 +222,7 @@ class Testupdate(unittest.TestCase):
         rectangle1.update(x=1, height=2, y=3, width=4)
         self.assertEqual([rectangle1.id, rectangle1.width, rectangle1.height,
                           rectangle1.x, rectangle1.y], [89, 4, 2, 1, 3])
+
 
 class TestRectangle_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Rectangle class."""
@@ -992,6 +997,7 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
+
 
 if __name__ == "__main__":
     unittest.main()
