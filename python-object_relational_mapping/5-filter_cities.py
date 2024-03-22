@@ -28,7 +28,6 @@ def filter_cities_by_state(username, password, database, state_name):
     if not len(cities):
         print()
 
-
     cursor.close()
     db.close()
 
