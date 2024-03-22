@@ -11,10 +11,10 @@ def filter_cities_by_state(username, password, database, state_name):
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=database)
     cursor = db.cursor()
-    sql_query = "SELECT GROUP_CONCAT(name SEPARATOR ', ') FROM cities \
-        JOIN states ON cities.state_id = states.id WHERE states.name = %s"
+    sql_query = "SELECT name FROM cities JOIN states ON cities.state_id = \
+        states.id WHERE states.name = %s ORDER BY cities.id ASC"
     cursor.execute(sql_query, (state_name,))
-    cities = cursor.fetchone()[0]
+    cities = cursor.fetchall()
 
     if cities:
         print(cities)
