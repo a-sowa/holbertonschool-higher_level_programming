@@ -14,15 +14,12 @@ def filter_states_by_name(username, password, database, state_name):
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states WHERE name = '{:s}' \
-                ORDER BY states.id".format(sys.argv[4]))
+                ORDER BY states.id".format(state_name))
 
     states = cursor.fetchall()
 
     for state in states:
         print(state)
-
-    cursor.close()
-    db.close()
 
 
 if __name__ == "__main__":
