@@ -12,11 +12,12 @@ def list_states_with_N(username, password, database):
                          passwd=password, db=database)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY states.id")
     states = cursor.fetchall()
 
     for state in states:
-        print(state)
+        if state[1][0] == "N":
+            print(state)
 
     cursor.close()
     db.close()
