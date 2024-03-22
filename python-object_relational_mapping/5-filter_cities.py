@@ -18,7 +18,7 @@ def filter_cities_by_state(username, password, database, state_name):
 
     if cities:
         for city in cities:
-            print(city[0])
+            print(city)
     else:
         print("")
 
