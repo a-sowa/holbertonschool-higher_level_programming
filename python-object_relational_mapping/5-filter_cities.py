@@ -17,7 +17,8 @@ def filter_cities_by_state(username, password, database, state_name):
     cities = cursor.fetchall()
 
     if cities:
-        print(cities)
+        for city in cities:
+            print(city[0])
     else:
         print("")
 
