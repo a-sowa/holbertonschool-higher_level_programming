@@ -13,7 +13,7 @@ def filter_states_by_name(username, password, database, state_name):
                          passwd=password, db=database)
     cursor = db.cursor()
 
-    sql_query = "SELECT * FROM states WHERE name = '{:s}' ORDER BY id ASC"\
+    sql_query = "SELECT * FROM states WHERE name = '{:s}' ORDER BY states.id"\
         .format(state_name)
 
     cursor.execute(sql_query)
