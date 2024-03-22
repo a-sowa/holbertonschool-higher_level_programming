@@ -9,19 +9,19 @@ import sys
 
 
 def filter_states_by_name_safe(username, password, database, state_name):
-        db = MySQLdb.connect(host="localhost", port=3306, user=username,
-                             passwd=password, db=database)
-        cursor = db.cursor()
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database)
+    cursor = db.cursor()
 
-        sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-        cursor.execute(sql_query, (state_name,))
-        states = cursor.fetchall()
+    sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor.execute(sql_query, (state_name,))
+    states = cursor.fetchall()
 
-        for state in states:
-            print(state)
+    for state in states:
+        print(state)
 
-        cursor.close()
-        db.close()
+    cursor.close()
+    db.close()
 
 
 if __name__ == "__main__":
